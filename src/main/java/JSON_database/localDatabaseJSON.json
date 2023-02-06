@@ -1,0 +1,23 @@
+{
+  "name": "localDatabaseJSON",
+  "path": "src\\main\\java\\JSON_database\\localDatabaseJSON.json",
+  "creationDate": "2023-02-06T21:03:51.5835714",
+  "lastEditDate": "2023-02-06T21:03:51.5845748",
+  "format": "JSON",
+  "managers": [
+    {
+      "login": "admin",
+      "position": "admin",
+      "uniqueKey": {
+        "managerKey": "totallyUniqueKey"
+      }
+    }
+  ],
+  "users": [],
+  "orders": [],
+  "categories": [],
+  "movies": [],
+  "stats": {
+    "someData": "Database created"
+  }
+}
