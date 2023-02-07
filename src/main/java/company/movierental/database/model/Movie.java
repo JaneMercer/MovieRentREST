@@ -192,6 +192,16 @@ public class Movie implements DataBaseElement {
 	}
 
 	// constructor
+
+	public Movie(String title, LocalDate releaseDate, String imdbID) {
+		super();
+		this.movieID = UniqueIDGenerator.generateUniqueID();
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.imdbID = imdbID;
+	}
+
+	// constructor form OMDB
 	public Movie(String title, int year, String rated, LocalDate releaseDate, String runtime, String genre,
 			String director, String writer, String actors, String plot, String language, String country, String awards,
 			String poster, List<Rating> ratings, String metascore, String imdbRating, String imdbVotes, String imdbID) {

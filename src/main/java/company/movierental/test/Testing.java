@@ -8,6 +8,8 @@ import java.util.List;
 import company.movierental.database.DatabaseFileController;
 import company.movierental.database.model.Manager;
 import company.movierental.database.model.Movie;
+import company.movierental.json.JsonHandler;
+import company.movierental.json.MovieHandler;
 import company.movierental.omdb.MovieFetcher;
 import company.movierental.service.MoviePrice;
 import company.movierental.service.RentedMovieController;
@@ -17,13 +19,15 @@ import company.movierental.utils.security.ManagerSecurityKey;
 public class Testing {
 
 	public static List<Movie> testFetch() {
-		List<Movie> movieList = MovieFetcher.getMoviesBySearch("The god", 1, 2022, "794669bb");
+		List<Movie> movieList = MovieFetcher.getMoviesBySearch("A cat", 1, 2022, "794669bb");
 		if (movieList != null) {
 			for (Movie movie : movieList) {
 				System.out.print(movie.toString());
 				System.out.print("\n __________ \n");
 
 			}
+			MovieHandler dataFile = new MovieHandler("src\\main\\java\\JSON_database\\2.json");
+			dataFile.addMovies(movieList);
 		}
 
 		return movieList;
@@ -47,8 +51,8 @@ public class Testing {
 	}
 
 	public static void main(String[] args) {
-		//testFetch();
-		createDataBaseJSON();
+		testFetch();
+		//createDataBaseJSON();
 
 //		List<Movie> movieList = testFetch();
 //		

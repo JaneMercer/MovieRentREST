@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import company.movierental.json.gson.DataBaseElement;
 
-public class DataBase implements DataBaseElement {
+public class Database implements DataBaseElement {
 	private String name;
 	private String path;
 	private LocalDateTime creationDate;
@@ -115,7 +115,7 @@ public class DataBase implements DataBaseElement {
 				+ lastEditDate + ", managers=" + managers + ", format=" + format + "]";
 	}
 
-	public DataBase(String name, String path, ArrayList<Manager> managers) {
+	public Database(String name, String path, ArrayList<Manager> managers) {
 		super();
 		this.name = name;
 		this.path = path;

@@ -20,7 +20,7 @@ import com.google.gson.JsonObject;
 import company.movierental.database.model.Movie;
 import company.movierental.database.model.Rating;
 
-public class JsonController {
+public class JsonHelper {
 
 	public static JsonObject fetchJsonObject(String requestURL) throws IOException {
 		URL url = new URL(requestURL);

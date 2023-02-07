@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import company.movierental.database.model.DataBase;
+import company.movierental.database.model.Database;
 import company.movierental.database.model.Manager;
 import company.movierental.json.gson.LocalDateTimeTypeAdapter;
 import company.movierental.json.gson.LocalDateTypeAdapter;
@@ -26,7 +26,7 @@ public class DatabaseFileController {
 		LocalDateTime lastEditDate = LocalDateTime.now();
 		String finalPath = folder + name + ".json";
 		String format = "JSON";
-		DataBase database = new DataBase(name, finalPath, managers);
+		Database database = new Database(name, finalPath, managers);
 		database.setCreationDate(creationDate);
 		database.setFormat(format);
 		database.setLastEditDate(lastEditDate);
@@ -37,13 +37,8 @@ public class DatabaseFileController {
 					.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeTypeAdapter())
 					.registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
 					.registerTypeAdapter(ManagerSecurityKey.class, new ManagerSecurityKeyTypeAdapter()).create();
-			//Gson gson = TypeAdapterFactoryBuilder.createGson();
-
-			//String json = gson.toJson(database);
 
 			try (FileWriter writer = new FileWriter(finalPath)) {
-				//writer.write(json);
-
 				gson.toJson(database, writer);
 				writer.flush();
 			} catch (IOException e) {
@@ -54,4 +49,7 @@ public class DatabaseFileController {
 		}
 	}
 
+//	TODO: Write "JsonObject readJsonFile(String databasePath, String databaseClasstoRead)" Idea is that it would read 
+	// Create another small file that would work as a pair for "database REST name: database path"
+	// Write "writeJSsonFile(JsonObject ...)" ...Just search a bit more about how to do this
 }

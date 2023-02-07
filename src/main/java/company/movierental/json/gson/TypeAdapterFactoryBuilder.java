@@ -6,7 +6,7 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 
 import company.movierental.database.model.Category;
-import company.movierental.database.model.DataBase;
+import company.movierental.database.model.Database;
 import company.movierental.database.model.Manager;
 import company.movierental.database.model.Movie;
 import company.movierental.database.model.Rating;
@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 public class TypeAdapterFactoryBuilder {
 	private static TypeAdapterFactory createTypeAdapterFactory() {
 		TypeAdapterFactory factory = RuntimeTypeAdapterFactory.of(DataBaseElement.class, "type")
-				.registerSubtype(DataBase.class, "database").registerSubtype(Movie.class, "movie")
+				.registerSubtype(Database.class, "database").registerSubtype(Movie.class, "movie")
 				.registerSubtype(Manager.class, "manager").registerSubtype(User.class, "user")
 				.registerSubtype(Category.class, "category").registerSubtype(Rating.class, "rating")
 				.registerSubtype(RentalOrder.class, "rentalOrder").registerSubtype(RentedMovie.class, "rentedMovie");
