@@ -1,4 +1,4 @@
-package company.movierental.utils.security;
+package company.movierental.utils;
 
 
 /**

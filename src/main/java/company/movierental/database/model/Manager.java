@@ -3,7 +3,7 @@ package company.movierental.database.model;
 import java.time.LocalDate;
 
 import company.movierental.json.gson.DataBaseElement;
-import company.movierental.utils.security.ManagerSecurityKey;
+import company.movierental.utils.ManagerSecurityKey;
 
 public class Manager implements DataBaseElement {
 	private String fullName;

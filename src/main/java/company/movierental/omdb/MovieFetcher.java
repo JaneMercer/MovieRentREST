@@ -1,4 +1,5 @@
 package company.movierental.omdb;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +7,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import company.movierental.database.model.Movie;
-import company.movierental.json.JsonHelper;
+import company.movierental.json.JsonHandler;
+import company.movierental.json.MovieHandler;
 
 public class MovieFetcher {
 
@@ -19,9 +21,9 @@ public class MovieFetcher {
 	 */
 	public static Movie getMovieById(String imdbID, String apikey) {
 		try {
-			JsonObject jsonObject = JsonHelper
+			JsonObject jsonObject = JsonHandler
 					.fetchJsonObject("http://www.omdbapi.com/?i=" + imdbID + "&apikey=" + apikey);
-			return JsonHelper.createMovieFromJson(jsonObject);
+			return MovieHandler.createMovieFromJson(jsonObject);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error caught while fetching movie information for imdbID: " + imdbID);
@@ -42,8 +44,8 @@ public class MovieFetcher {
 			String apikey) {
 		List<String> imdbIDs = new ArrayList<>();
 		try {
-			JsonObject jsonObject = JsonHelper.fetchJsonObject("http://www.omdbapi.com/?s=" + searchRequest
-					+ "&page=" + pageNumber + "&type=movie&r=json&y=" + releaseYear + "&apikey=" + apikey);
+			JsonObject jsonObject = JsonHandler.fetchJsonObject("http://www.omdbapi.com/?s=" + searchRequest + "&page="
+					+ pageNumber + "&type=movie&r=json&y=" + releaseYear + "&apikey=" + apikey);
 			JsonArray searchResults = jsonObject.getAsJsonArray("Search");
 			if (searchResults != null) {
 				for (int i = 0; i < searchResults.size(); i++) {

@@ -9,13 +9,13 @@ public class MoviePrice {
 	private double pricePerWeek;
 	private LocalDate releaseDate;
 
-	public MoviePrice(Movie movie, LocalDate date) {
-		this.releaseDate = movie.getReleaseDate();
+	public MoviePrice(LocalDate releaseDate, LocalDate date) {
+		this.releaseDate = releaseDate;
 		this.pricePerWeek = calculatePricePerWeek(date);
 	}
 
-	public MoviePrice(Movie movie) {
-		this.releaseDate = movie.getReleaseDate();
+	public MoviePrice(LocalDate releaseDate) {
+		this.releaseDate = releaseDate;
 		this.pricePerWeek = calculatePricePerWeek(LocalDate.now());
     }
 

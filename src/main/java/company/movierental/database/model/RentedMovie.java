@@ -3,7 +3,7 @@ package company.movierental.database.model;
 import java.time.LocalDate;
 
 import company.movierental.json.gson.DataBaseElement;
-import company.movierental.service.RentedMovieController;
+import company.movierental.service.InvoiceService;
 
 public class RentedMovie implements DataBaseElement {
 
@@ -40,7 +40,7 @@ public class RentedMovie implements DataBaseElement {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.user = user;
-		this.rentalPrice = RentedMovieController.calculateRentalPrice(movie, startDate, endDate);
+		this.rentalPrice = InvoiceService.calculateRentalPrice(movie, startDate, endDate);
 	}
 	// toString()
 

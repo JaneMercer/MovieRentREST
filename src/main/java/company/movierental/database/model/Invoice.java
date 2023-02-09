@@ -6,7 +6,7 @@ import java.util.UUID;
 import company.movierental.json.gson.DataBaseElement;
 import company.movierental.utils.UniqueIDGenerator;
 
-public class RentalOrder implements DataBaseElement  {
+public class Invoice implements DataBaseElement  {
 	private static final Boolean False = null;
 	private UUID orderID;
 	private User client;
@@ -55,7 +55,7 @@ public class RentalOrder implements DataBaseElement  {
 	}
 
 	
-	public RentalOrder(String orderID, User client, Boolean isPaid) {
+	public Invoice(String orderID, User client, Boolean isPaid) {
 		super();
 		this.orderID = UniqueIDGenerator.generateUniqueID();
 		this.client = client;

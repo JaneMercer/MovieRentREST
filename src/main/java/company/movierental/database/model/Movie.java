@@ -237,7 +237,7 @@ public class Movie implements DataBaseElement {
 				+ ", awards=" + awards + ", poster=" + poster + ", ratings=" + ratings + ", metascore=" + metascore
 				+ ", imdbRating=" + imdbRating + ", imdbVotes=" + imdbVotes + ", imdbID=" + imdbID + "]";
 	}
-	
+
 	@Override
 	public String getType() {
 		return "movie";

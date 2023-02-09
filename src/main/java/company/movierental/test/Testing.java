@@ -5,15 +5,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import company.movierental.database.DatabaseFileController;
 import company.movierental.database.model.Manager;
 import company.movierental.database.model.Movie;
 import company.movierental.json.JsonHandler;
 import company.movierental.json.MovieHandler;
 import company.movierental.omdb.MovieFetcher;
 import company.movierental.service.MoviePrice;
-import company.movierental.service.RentedMovieController;
-import company.movierental.utils.security.ManagerSecurityKey;
+import company.movierental.service.InvoiceService;
+import company.movierental.utils.ManagerSecurityKey;
 
 @SuppressWarnings("unused")
 public class Testing {
@@ -43,7 +42,7 @@ public class Testing {
 			uniqueKey.setManagerKey("totallyUniqueKey");
 
 			databaseManagers.add(new Manager("admin", "admin", uniqueKey));
-			DatabaseFileController.createJsonFile("localDatabaseJSON", "src\\main\\java\\JSON_database\\", databaseManagers);
+			JsonHandler.createJsonFile("localDatabaseJSON", "src\\main\\java\\JSON_database\\", databaseManagers);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,16 +53,5 @@ public class Testing {
 		testFetch();
 		//createDataBaseJSON();
 
-//		List<Movie> movieList = testFetch();
-//		
-//		int i = 0;
-//		for (Movie movie : movieList) {
-//			// System.out.print(new MoviePrice(movie).getPricePerWeek());
-//			LocalDate nowDate = LocalDate.now();
-//			System.out.print("\n" + movie.getTitle() + ": "
-//					+ RentedMovieController.calculateRentalPrice(movie, nowDate, nowDate.plusWeeks(i)) + "\n");
-//			i += 1;
-//
-//		}
 	}
 }

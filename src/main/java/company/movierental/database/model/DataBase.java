@@ -13,7 +13,7 @@ public class Database implements DataBaseElement {
 	private String format;
 	private ArrayList<Manager> managers;
 	private ArrayList<User> users;
-	private ArrayList<RentalOrder> orders;
+	private ArrayList<Invoice> orders;
 	private ArrayList<Category> categories;
 	private ArrayList<Movie> movies;
 	private Statistics stats;
@@ -75,11 +75,11 @@ public class Database implements DataBaseElement {
 		this.users = users;
 	}
 
-	public ArrayList<RentalOrder> getOrders() {
+	public ArrayList<Invoice> getOrders() {
 		return orders;
 	}
 
-	public void setOrders(ArrayList<RentalOrder> orders) {
+	public void setOrders(ArrayList<Invoice> orders) {
 		this.orders = orders;
 	}
 
