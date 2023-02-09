@@ -26,7 +26,8 @@ public class Testing {
 
 			}
 			MovieHandler dataFile = new MovieHandler("src\\main\\java\\JSON_database\\2.json");
-			dataFile.addMovies(movieList);
+			for (Movie movie: movieList) {
+				dataFile.addMovie(movie);}
 		}
 
 		return movieList;
@@ -51,7 +52,7 @@ public class Testing {
 
 	public static void main(String[] args) {
 		testFetch();
-		//createDataBaseJSON();
+		// createDataBaseJSON();
 
 	}
 }

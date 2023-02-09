@@ -1,5 +1,7 @@
 package company.movierental.rest;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -14,12 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import company.movierental.Config;
-import company.movierental.database.model.Database;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import company.movierental.database.model.Movie;
-import company.movierental.json.JsonHandler;
 import company.movierental.json.MovieHandler;
+import company.movierental.json.gson.LocalDateTimeTypeAdapter;
+import company.movierental.json.gson.LocalDateTypeAdapter;
+import company.movierental.json.gson.ManagerSecurityKeyTypeAdapter;
 import company.movierental.service.MoviePrice;
+import company.movierental.utils.ManagerSecurityKey;
 
 @RestController
 @RequestMapping("/api/movies")
@@ -32,29 +40,36 @@ public class MovieController {
 
 	@ResponseBody
 	@GetMapping
-	public static List<Movie> listMovies() {
-		JsonHandler handler = new JsonHandler(Config.FILE_PATH);
-		Database database = handler.getDatabase();
-		List<Movie> movies = database.getMovies();
-		return movies;
+	public ResponseEntity<List<Movie>> getMovies() {
+		List<Movie> movies = movieHandler.getMovies();
+		return ResponseEntity.status(HttpStatus.OK).body(movies);
 	}
-	
+
 	@GetMapping("/price/{imdbID}")
 	public ResponseEntity<Double> getPricePerWeek(@PathVariable String imdbID) {
-	Movie movie = movieHandler.getMovieByImdbID(imdbID);
-	if (movie == null) {
-	return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-	}
-	MoviePrice moviePrice = new MoviePrice(movie.getReleaseDate());
-	return ResponseEntity.ok(moviePrice.getPricePerWeek());
+		Movie movie = movieHandler.getMovieByImdbID(imdbID);
+		if (movie == null) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+		MoviePrice moviePrice = new MoviePrice(movie.getReleaseDate());
+		return ResponseEntity.ok(moviePrice.getPricePerWeek());
 	}
 
 	@PostMapping
-	public ResponseEntity<Object> addMovies(@RequestBody List<Movie> movies) {
-		if (movieHandler.addMovies(movies)) {
-			return ResponseEntity.status(HttpStatus.CREATED).build();
-		}
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	public ResponseEntity<Object> addMovie(@RequestBody String jsonString) {
+		Gson gson = new GsonBuilder().setPrettyPrinting()
+				.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeTypeAdapter())
+				.registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
+				.registerTypeAdapter(ManagerSecurityKey.class, new ManagerSecurityKeyTypeAdapter()).create();
+
+	JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
+
+	Movie movie = MovieHandler.createMovieFromJson(jsonObject);
+	  if (movie != null && movieHandler.addMovie(movie)) {
+	    return ResponseEntity.status(HttpStatus.CREATED).build();
+	  } else {
+	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+	  }
 	}
 
 	@PutMapping
@@ -72,7 +87,5 @@ public class MovieController {
 		}
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 	}
-	
-	
 
 }

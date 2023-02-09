@@ -1,8 +1,17 @@
 package company.movierental.database.model;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import company.movierental.json.gson.DataBaseElement;
 import company.movierental.utils.UniqueIDGenerator;
@@ -10,7 +19,7 @@ import company.movierental.utils.UniqueIDGenerator;
 public class Movie implements DataBaseElement {
 	private UUID movieID;
 	private String title;
-	private int year;
+	private String year;
 	private String rated;
 	private LocalDate releaseDate;
 	private String runtime;
@@ -47,11 +56,11 @@ public class Movie implements DataBaseElement {
 		this.title = title;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
@@ -202,7 +211,7 @@ public class Movie implements DataBaseElement {
 	}
 
 	// constructor form OMDB
-	public Movie(String title, int year, String rated, LocalDate releaseDate, String runtime, String genre,
+	public Movie(String title, String year, String rated, LocalDate releaseDate, String runtime, String genre,
 			String director, String writer, String actors, String plot, String language, String country, String awards,
 			String poster, List<Rating> ratings, String metascore, String imdbRating, String imdbVotes, String imdbID) {
 		super();
@@ -242,5 +251,6 @@ public class Movie implements DataBaseElement {
 	public String getType() {
 		return "movie";
 	}
+
 
 }

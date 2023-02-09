@@ -1,5 +1,6 @@
 package company.movierental.json;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import company.movierental.database.model.Movie;
@@ -19,36 +22,50 @@ import company.movierental.database.model.Rating;
  * for adding, updating and removing movies from a local JSON file.
  */
 public class MovieHandler extends JsonHandler {
+
+	private static final boolean False = false;
+
 	/**
 	 * Constructor that sets the file path to the local JSON file.
 	 * 
 	 * @param filePath The file path to the local JSON file.
 	 */
+
 	public MovieHandler(String filePath) {
 		super(filePath);
 	}
 
 	/**
-	 * Method to add a list of movies to the local JSON file.
+	 * Returns a list of all movies stored in the database.
 	 *
-	 * @param movieList The list of movies to be added.
-	 * @return Returns `true` if the movies were added successfully and the database
+	 * @return A list of all movies stored in the database.
+	 */
+	public List<Movie> getMovies() {
+		return this.database.getMovies();
+	}
+
+	/**
+	 * Method to add a movie to the local JSON file.
+	 *
+	 * @param movie A movie to be added.
+	 * @return Returns `true` if the movie was added successfully and the database
 	 *         was saved, `false` otherwise.
 	 */
-	public boolean addMovies(List<Movie> movieList) {
-		if (this.database == null) {
-			return false;
-		}
+	public boolean addMovie(Movie movie) {
+	    if (this.database == null) {
+	        return false;
+	    }
 
-		for (Movie movie : movieList) {
-			if (!database.getMovies().stream()
-					.anyMatch(existingMovie -> existingMovie.getImdbID().equals(movie.getImdbID()))) {
-				this.database.getMovies().add(movie);
-			}
-		}
-		this.database.setLastEditDate(LocalDateTime.now());
-		return saveDatabase();
+	    if (!database.getMovies().stream()
+	            .anyMatch(existingMovie -> existingMovie.getImdbID().equals(movie.getImdbID()))) {
+	        this.database.getMovies().add(movie);
+		    this.database.setLastEditDate(LocalDateTime.now());
+		    return saveDatabase();
+	    } else {
+	        return false;
+	    }
 	}
+
 
 	/**
 	 * Method to update a movie in the local JSON file.
@@ -123,59 +140,62 @@ public class MovieHandler extends JsonHandler {
 		return null;
 	}
 
-	public static Movie createMovieFromJson(JsonObject jsonObject) {
+	private static String getValueOrDefault(JsonObject json, String key, String defaultValue) {
+		JsonElement element = json.get(key);
+		return element != null && !element.isJsonNull() ? element.getAsString() : defaultValue;
+	}
 
-		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-				// case insensitive to parse JAN and FEB
-				.parseCaseInsensitive()
-				// add pattern
-				.appendPattern("dd MMM yyyy")
-				// create formatter (use English Locale to parse month names)
+	public static Movie createMovieFromJson(JsonObject json) {
+		DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendPattern("yyyy-MM-dd")
 				.toFormatter(Locale.ENGLISH);
 
-		// create list of Ratings
-		JsonArray ratings = jsonObject.getAsJsonArray("Ratings");
+		JsonArray ratings = json.getAsJsonArray("ratings");
 		List<Rating> movieRatings = new ArrayList<>();
-		for (int i = 0; i < ratings.size(); i++) {
-			JsonObject rating = ratings.get(i).getAsJsonObject();
-			movieRatings.add(new Rating(rating.get("Source").getAsString(), rating.get("Value").getAsString()));
+		if (ratings != null) {
+			for (JsonElement ratingElement : ratings) {
+				JsonObject rating = ratingElement.getAsJsonObject();
+				movieRatings.add(new Rating(getValueOrDefault(rating, "Source", "N/A"),
+						getValueOrDefault(rating, "value", "N/A")));
+			}
 		}
 
-		try {
-			String title = jsonObject.get("Title").getAsString();
-			int year = jsonObject.get("Year").getAsInt();
-			String rated = jsonObject.get("Rated").getAsString();
-			String releaseDateJson = jsonObject.get("Released").getAsString();
-			LocalDate releaseDate = null;
-			if (!releaseDateJson.equals("N/A")) {
-				releaseDate = LocalDate.parse(releaseDateJson, formatter);
-			}
-			String runtime = jsonObject.get("Runtime").getAsString();
-			String genre = jsonObject.get("Genre").getAsString();
-			String director = jsonObject.get("Director").getAsString();
-			String writer = jsonObject.get("Writer").getAsString();
-			String actors = jsonObject.get("Actors").getAsString();
-			String plot = jsonObject.get("Plot").getAsString();
-			String language = jsonObject.get("Language").getAsString();
-			String country = jsonObject.get("Country").getAsString();
-			String awards = jsonObject.get("Awards").getAsString();
-			String poster = jsonObject.get("Poster").getAsString();
-			String metascore = jsonObject.get("Metascore").getAsString();
-			String imdbRating = jsonObject.get("imdbRating").getAsString();
-			String imdbVotes = jsonObject.get("imdbVotes").getAsString();
-			String imdbID = jsonObject.get("imdbID").getAsString();
-
-			if (title.equals("N/A") || imdbID.equals("N/A") || releaseDate == null) {
-				throw new IllegalArgumentException(
-						"Title, imdbID, and Released are required fields, cannot be null. Movie won't be created.");
-			}
-
-			return new Movie(title, year, rated, releaseDate, runtime, genre, director, writer, actors, plot, language,
-					country, awards, poster, movieRatings, metascore, imdbRating, imdbVotes, imdbID);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new IllegalArgumentException("Error parsing movie information from JsonObject", e);
+		String title = getValueOrDefault(json, "title", "N/A");
+		String year = getValueOrDefault(json, "year", "N/A");
+		String rated = getValueOrDefault(json, "rated", "N/A");
+		String releaseDateJson = getValueOrDefault(json, "releaseDate", "N/A");
+		LocalDate releaseDate = null;
+		if (!releaseDateJson.equals("N/A") ) {
+			releaseDate = LocalDate.parse(releaseDateJson, formatter);
 		}
+		String runtime = getValueOrDefault(json, "runtime", "N/A");
+		String genre = getValueOrDefault(json, "genre", "N/A");
+		String director = getValueOrDefault(json, "director", "N/A");
+		String writer = getValueOrDefault(json, "writer", "N/A");
+		String actors = getValueOrDefault(json, "actors", "N/A");
+		String plot = getValueOrDefault(json, "plot", "N/A");
+		String language = getValueOrDefault(json, "language", "N/A");
+		String country = getValueOrDefault(json, "country", "N/A");
+		String awards = getValueOrDefault(json, "awards", "N/A");
+		String poster = getValueOrDefault(json, "poster", "N/A");
+		String metascore = getValueOrDefault(json, "metascore", "N/A");
+		String imdbRating = getValueOrDefault(json, "imdbRating", "N/A");
+		String imdbVotes = getValueOrDefault(json, "imdbVotes", "N/A");
+		String imdbID = getValueOrDefault(json, "imdbID", "N/A");
+		
+
+		Movie tempMovie = new Movie(title, year, rated, releaseDate, runtime, genre, director, writer, actors, plot, language,
+				country, awards, poster, movieRatings, metascore, imdbRating, imdbVotes, imdbID);
+				
+		System.out.print(tempMovie.toString());
+
+		if (title.equals("N/A") || imdbID.equals("N/A") || releaseDate == null) {
+			throw new IllegalArgumentException(
+					"Title, imdbID, and Released are required fields, cannot be null. Movie won't be created.");
+		}
+
+		return new Movie(title, year, rated, releaseDate, runtime, genre, director, writer, actors, plot, language,
+				country, awards, poster, movieRatings, metascore, imdbRating, imdbVotes, imdbID);
+
 	}
 
 }

@@ -2,7 +2,7 @@
   "name": "localDatabaseJSON",
   "path": "src\\main\\java\\JSON_database\\localDatabaseJSON.json",
   "creationDate": "2023-02-07T20:07:34.5029148",
-  "lastEditDate": "2023-02-07T20:30:10.7422968",
+  "lastEditDate": "2023-02-09T18:13:28.2766877",
   "format": "JSON",
   "managers": [
     {
@@ -13,14 +13,26 @@
       }
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "email": "userOfName@gmail.com",
+      "password": "1111",
+      "rentalOrders": []
+    },
+    {
+      "name": "Bob",
+      "email": "userOfNameBob@gmail.com",
+      "password": "1111Bob",
+      "rentalOrders": []
+    }
+  ],
   "orders": [],
   "categories": [],
   "movies": [
     {
       "movieID": "31bcb757-4bfb-4f14-a981-7fccb14e08a0",
       "title": "Inside the Mind of a Cat",
-      "year": 2022,
+      "year": "2022",
       "rated": "TV-PG",
       "releaseDate": "2022-08-18",
       "runtime": "67 min",
@@ -47,7 +59,7 @@
     {
       "movieID": "9f4cdad6-cf46-486a-84f5-311713e423be",
       "title": "The Black Cat",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-11-03",
       "runtime": "20 min",
@@ -69,7 +81,7 @@
     {
       "movieID": "d78acd8a-81ab-46f8-b2a8-4a7b7e55672e",
       "title": "The Amityville Cute Farting Cat",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-12-14",
       "runtime": "1 min",
@@ -91,7 +103,7 @@
     {
       "movieID": "b214e00f-7a1d-482a-9656-1e6eb848f085",
       "title": "Mouschi: The Cat Who Lived with Anne Frank",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-07-17",
       "runtime": "N/A",
@@ -113,7 +125,7 @@
     {
       "movieID": "1d90ae52-fbd6-432d-9d3c-ff06ca612c17",
       "title": "Why the Cat Popped",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-01-28",
       "runtime": "7 min",
@@ -135,7 +147,7 @@
     {
       "movieID": "33680b94-291d-4b4a-a986-b03e767dff88",
       "title": "Save the Cat - 2022",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-04-01",
       "runtime": "N/A",
@@ -157,7 +169,7 @@
     {
       "movieID": "047ee32f-1af4-48e6-947f-aa551aa95f5d",
       "title": "Cool Cat Saves the Kids - the Director\u0027s Cut",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-03-15",
       "runtime": "94 min",
@@ -179,7 +191,7 @@
     {
       "movieID": "e5c38127-95a2-41d0-986f-38df3ddfdab4",
       "title": "A Cat Called Dom",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-08-13",
       "runtime": "75 min",
@@ -201,7 +213,7 @@
     {
       "movieID": "0f2e76c5-7f1e-4277-973f-a0d3ec817c1c",
       "title": "Ask a Cat #3",
-      "year": 2022,
+      "year": "2022",
       "rated": "N/A",
       "releaseDate": "2022-01-08",
       "runtime": "4 min",
@@ -219,6 +231,72 @@
       "imdbRating": "N/A",
       "imdbVotes": "N/A",
       "imdbID": "tt16976824"
+    },
+    {
+      "movieID": "9f4cdad6-cf46-486a-84f5-311713e423be",
+      "title": "Another Custom Movie",
+      "year": "2006",
+      "rated": "N/A",
+      "releaseDate": "2006-02-03",
+      "runtime": "20 min",
+      "genre": "Short",
+      "director": "Aiyana De Vree",
+      "writer": "Aiyana De Vree",
+      "actors": "Max Mühlhoff",
+      "plot": "Within Adalbert, this ordinary nobody, slumbers a deep longing for higher meaning, a purpose of his existence. For him, being a human is too narrow, too caging and dull. He understands himself as a being that breaks the boundaries...",
+      "language": "German",
+      "country": "N/A",
+      "awards": "N/A",
+      "poster": "N/A",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "N/A",
+      "imdbID": "tt00136806"
+    },
+    {
+      "movieID": "9719dcc7-9294-4c62-9e5d-e67a337c8114",
+      "title": "The AA",
+      "year": "N/A",
+      "rated": "N/A",
+      "releaseDate": "2022-11-03",
+      "runtime": "N/A",
+      "genre": "N/A",
+      "director": "N/A",
+      "writer": "N/A",
+      "actors": "N/A",
+      "plot": "N/A",
+      "language": "N/A",
+      "country": "N/A",
+      "awards": "N/A",
+      "poster": "N/A",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "N/A",
+      "imdbID": "tt23136801"
+    },
+    {
+      "movieID": "20cc23c2-efd6-420a-9f16-00769f1dc40c",
+      "title": "The AggggggggggggA",
+      "year": "N/A",
+      "rated": "N/A",
+      "releaseDate": "2022-11-03",
+      "runtime": "N/A",
+      "genre": "N/A",
+      "director": "N/A",
+      "writer": "N/A",
+      "actors": "N/A",
+      "plot": "N/A",
+      "language": "N/A",
+      "country": "N/A",
+      "awards": "N/A",
+      "poster": "N/A",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "N/A",
+      "imdbID": "tt00136821"
     }
   ],
   "stats": {
