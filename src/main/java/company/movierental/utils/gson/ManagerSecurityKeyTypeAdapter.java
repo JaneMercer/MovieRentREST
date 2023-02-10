@@ -1,4 +1,4 @@
-package company.movierental.json.gson;
+package company.movierental.utils.gson;
 
 import java.io.IOException;
 
@@ -6,7 +6,7 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
-import company.movierental.utils.security.ManagerSecurityKey;
+import company.movierental.utils.genkey.ManagerSecurityKey;
 
 public class ManagerSecurityKeyTypeAdapter extends TypeAdapter<ManagerSecurityKey> {
 	  private static final String KEY_FIELD = "managerKey";

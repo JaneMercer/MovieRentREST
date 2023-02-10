@@ -1,4 +1,4 @@
-package company.movierental.json.gson;
+package company.movierental.utils.gson;
 
 import java.io.IOException;
 import java.time.LocalDate;

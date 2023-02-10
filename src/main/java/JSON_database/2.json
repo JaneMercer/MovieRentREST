@@ -1,0 +1,310 @@
+{
+  "name": "2",
+  "path": "src\\main\\java\\JSON_database\\2.json",
+  "creationDate": "2023-02-10T21:33:00.6284848",
+  "lastEditDate": "2023-02-10T21:33:00.9701971",
+  "format": "JSON",
+  "managers": [
+    {
+      "login": "admin",
+      "position": "admin",
+      "uniqueKey": {
+        "managerKey": "totallyUniqueKey"
+      }
+    }
+  ],
+  "users": [],
+  "orders": [],
+  "categories": [],
+  "movies": [
+    {
+      "movieID": "9556e5b1-2c51-4cda-bec4-1dc74df803d3",
+      "title": "The Best Years",
+      "year": "2020",
+      "rated": "N/A",
+      "releaseDate": "2020-02-13",
+      "runtime": "129 min",
+      "genre": "Drama",
+      "director": "Gabriele Muccino",
+      "writer": "Gabriele Muccino, Paolo Costella",
+      "actors": "Pierfrancesco Favino, Micaela Ramazzotti, Kim Rossi Stuart",
+      "plot": "The story of Italy, from the 80s to nowadays, told through the life of four friends, Giulio, Gemma, Paolo e Riccardo; during 40 years of loves, aspirations, success and failures.",
+      "language": "Italian, Neapolitan, German",
+      "country": "Italy",
+      "awards": "1 win \u0026 12 nominations",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZDZmNzFlYzMtZWQ5Mi00ZmRiLWI2M2EtYTEzNjAwYWVlZWQ5XkEyXkFqcGdeQXVyMzIwNDY4NDI@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "6.6/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "6.6",
+      "imdbVotes": "2,444",
+      "imdbID": "tt9392248"
+    },
+    {
+      "movieID": "2110783b-568c-48e1-aa47-8da70b49f2dd",
+      "title": "Best Wishes, Warmest Regards: A Schitt\u0027s Creek Farewell",
+      "year": "2020",
+      "rated": "TV-MA",
+      "releaseDate": "2020-04-07",
+      "runtime": "44 min",
+      "genre": "N/A",
+      "director": "Amy Segal",
+      "writer": "Amy Segal",
+      "actors": "Sarah Levy, Dan Levy, Eugene Levy",
+      "plot": "Interviews with the cast, creators, journalists and celebrity fans.",
+      "language": "English",
+      "country": "Canada",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTNiMDFlZWItM2FkMi00NjI1LWJiYzQtYmUxN2JmNjcwYWU4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "8.6/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "8.6",
+      "imdbVotes": "1,519",
+      "imdbID": "tt12004838"
+    },
+    {
+      "movieID": "f85d941d-f447-4f8a-b2b4-d591a274c060",
+      "title": "My Best Friend\u0027s Bouquet",
+      "year": "2020",
+      "rated": "TV-G",
+      "releaseDate": "2020-10-10",
+      "runtime": "83 min",
+      "genre": "Romance",
+      "director": "Jessica Harmon",
+      "writer": "Brittni Brown, Jenna Palermo, Elizabeth Hackett",
+      "actors": "Chaley Rose, Nathan Witte, Rebecca Olson",
+      "plot": "Josie believes the wedding bouquet finds the one who\u0027s next to marry and is shocked to catch it at her friend\u0027s reception. When she starts dating a fellow guest, her belief keeps her from realizing the right man\u0027s been there all a...",
+      "language": "English",
+      "country": "Canada",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWRmZDhjMWYtODlkNy00OGU5LTgzMWEtZWY1MTgyYzliNDQ4XkEyXkFqcGdeQXVyNDk3ODk4OQ@@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "6.2/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "6.2",
+      "imdbVotes": "692",
+      "imdbID": "tt12972410"
+    },
+    {
+      "movieID": "96d7c5b7-ce48-46aa-ac78-6a70eb91fa1e",
+      "title": "Best of Stand-Up 2020",
+      "year": "2020",
+      "rated": "N/A",
+      "releaseDate": "2020-12-31",
+      "runtime": "76 min",
+      "genre": "Comedy",
+      "director": "N/A",
+      "writer": "N/A",
+      "actors": "Eric André, Michelle Buteau, Urzila Carlson",
+      "plot": "From Jerry Seinfeld to Leslie Jones, Kevin Hart to Hannah Gadsby, laugh along with the funniest bits from Netflix\u0027s 2020 stand-up comedy specials. Unnecessary milk substitutes. Bad passwords. Burlap underpants. 2020 may have sucke...",
+      "language": "English",
+      "country": "N/A",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWM5YzE3YzktOGQ5Mi00ZWM1LTk2NzQtMjY5YTFmYTMxZmZhXkEyXkFqcGdeQXVyNjU0NTI0Nw@@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "5.5/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "5.5",
+      "imdbVotes": "662",
+      "imdbID": "tt13649688"
+    },
+    {
+      "movieID": "500682af-559c-495b-960e-54c6bc1a24ad",
+      "title": "My Best Part",
+      "year": "2020",
+      "rated": "Unrated",
+      "releaseDate": "2020-10-28",
+      "runtime": "108 min",
+      "genre": "Comedy, Drama",
+      "director": "Nicolas Maury",
+      "writer": "Maud Ameline, Sophie Fillières, Nicolas Maury",
+      "actors": "Nicolas Maury, Nathalie Baye, Arnaud Valois",
+      "plot": "Jeremie, a young man at his breaking point, leaves Paris to return to his intrusive mother in Limosin.",
+      "language": "French",
+      "country": "France",
+      "awards": "3 nominations",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDFhZWE3MTItMjE3Ni00Zjc5LThhM2UtNzVhNTIzNmYwZGI2XkEyXkFqcGdeQXVyMTI0MjI0NTc0._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "5.5/10"
+        },
+        {
+          "source": "Rotten Tomatoes",
+          "value": "87%"
+        },
+        {
+          "source": "Metacritic",
+          "value": "68/100"
+        }
+      ],
+      "metascore": "68",
+      "imdbRating": "5.5",
+      "imdbVotes": "439",
+      "imdbID": "tt11093134"
+    },
+    {
+      "movieID": "f2dbae87-db97-4b16-8219-2ff69b8c216d",
+      "title": "The Best Families",
+      "year": "2020",
+      "rated": "N/A",
+      "releaseDate": "2022-11-22",
+      "runtime": "99 min",
+      "genre": "Comedy",
+      "director": "Javier Fuentes-León",
+      "writer": "Javier Fuentes-León",
+      "actors": "Ghia Burns, Roberto Cano, Vanessa Saba",
+      "plot": "A long-hidden secret flips generational hierarchies upside down at a huge birthday celebration.",
+      "language": "Spanish",
+      "country": "Peru, Colombia",
+      "awards": "5 nominations",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWI0YWFmZjktZWI0OS00ZmI0LWE4YWItNmY0MmU1ODY1NmEwXkEyXkFqcGdeQXVyMTI0MjI0NTc0._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "6.4/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "6.4",
+      "imdbVotes": "370",
+      "imdbID": "tt11938888"
+    },
+    {
+      "movieID": "8bef86b9-70bd-49fb-a552-461482b8d968",
+      "title": "Iceland Is Best",
+      "year": "2020",
+      "rated": "Not Rated",
+      "releaseDate": "2021-09-08",
+      "runtime": "90 min",
+      "genre": "Drama",
+      "director": "Max Newsom",
+      "writer": "Max Newsom",
+      "actors": "Judd Nelson, Helena Mattsson, Tom Prior",
+      "plot": "Tells the story of Sigga, a 17 year-old girl trying to leave home in Iceland, and make her way to California.",
+      "language": "English",
+      "country": "United Kingdom",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjNhMjY2YTQtYmU1YS00OTVhLTg4OTMtNmE5NTg0YzgxYjFjXkEyXkFqcGdeQXVyNTM2MTIwODg@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "3.8/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "3.8",
+      "imdbVotes": "195",
+      "imdbID": "tt6873364"
+    },
+    {
+      "movieID": "98f61213-3365-4164-9b00-800a82667e99",
+      "title": "Alex Fernández: The Best Comedian in the World",
+      "year": "2020",
+      "rated": "TV-MA",
+      "releaseDate": "2020-01-28",
+      "runtime": "51 min",
+      "genre": "Comedy",
+      "director": "Alex Díaz",
+      "writer": "N/A",
+      "actors": "Alex Fernández",
+      "plot": "N/A",
+      "language": "Spanish",
+      "country": "Mexico",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOWJjODcyNTItNWFlNi00ODQ3LTg1NmQtNTYzNjA3NTA5Yjc4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "6.3/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "6.3",
+      "imdbVotes": "146",
+      "imdbID": "tt11497900"
+    },
+    {
+      "movieID": "12b83f6f-5d76-4d29-b27f-a2856fd211a6",
+      "title": "Best Summer Ever",
+      "year": "2020",
+      "rated": "N/A",
+      "releaseDate": "2021-04-27",
+      "runtime": "72 min",
+      "genre": "Musical",
+      "director": "Michael Parks Randa, Lauren Smitelli",
+      "writer": "Will Halby, Terra Mackintosh, Michael Parks Randa",
+      "actors": "Shannon DeVido, Rickey Alexander Wilson, MuMu",
+      "plot": "A fresh and exhilarating take on the beloved teen musical genre featuring eight original songs and a fully integrated cast and crew of people with and without disabilities.",
+      "language": "English",
+      "country": "United States",
+      "awards": "4 wins \u0026 1 nomination",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMmFlYTkwMjAtZTMyNy00OTJhLTlhMmUtZGM3M2QyYjM3NTlkXkEyXkFqcGdeQXVyNTA4Mjg5NTE@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "5.5/10"
+        },
+        {
+          "source": "Rotten Tomatoes",
+          "value": "89%"
+        },
+        {
+          "source": "Metacritic",
+          "value": "72/100"
+        }
+      ],
+      "metascore": "72",
+      "imdbRating": "5.5",
+      "imdbVotes": "143",
+      "imdbID": "tt7543058"
+    },
+    {
+      "movieID": "28b7290d-0f74-477c-8e86-437b837af620",
+      "title": "One Night Only: The Best of Broadway",
+      "year": "2020",
+      "rated": "N/A",
+      "releaseDate": "2020-12-10",
+      "runtime": "120 min",
+      "genre": "N/A",
+      "director": "Alexander J. Vietmeier",
+      "writer": "Jon Macks",
+      "actors": "Tina Fey, Annaleigh Ashford, Antonio Banderas",
+      "plot": "N/A",
+      "language": "English",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzBiNGQxNmEtMDVjZS00MWFkLWE3ODctODEzYzBkYTBiOTA1XkEyXkFqcGdeQXVyMTI3MjUyMzM0._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "7.3/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "7.3",
+      "imdbVotes": "94",
+      "imdbID": "tt13522686"
+    }
+  ],
+  "stats": {
+    "someData": ["Database created"]
+  }
+}

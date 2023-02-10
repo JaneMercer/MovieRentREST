@@ -3,19 +3,68 @@ package company.movierental.database.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import company.movierental.json.gson.DataBaseElement;
-
-public class DataBase implements DataBaseElement {
+/**
+ * The `Database` class represents a database object. It stores information
+ * about movies, users, invoices, categories, managers and statistics.
+ * 
+ * @author Iryna
+ * @version 0.1
+ * @since 10.02.23
+ */
+public class Database implements DataBaseElement {
+	/**
+	 * The name of the database.
+	 */
 	private String name;
+
+	/**
+	 * The file path of the database.
+	 */
 	private String path;
+
+	/**
+	 * The date and time of the database creation.
+	 */
 	private LocalDateTime creationDate;
+
+	/**
+	 * The date and time of the last modification to the database.
+	 */
 	private LocalDateTime lastEditDate;
+
+	/**
+	 * The format of the database (JSON or YAML).
+	 */
 	private String format;
+
+	/**
+	 * The list of managers who have access to the database.
+	 */
 	private ArrayList<Manager> managers;
+
+	/**
+	 * The list of users who have made orders.
+	 */
 	private ArrayList<User> users;
-	private ArrayList<RentalOrder> orders;
+
+	/**
+	 * The list of invoices generated from the orders.
+	 */
+	private ArrayList<Invoice> orders;
+
+	/**
+	 * The list of movie categories.
+	 */
 	private ArrayList<Category> categories;
+
+	/**
+	 * The list of movies stored in the database.
+	 */
 	private ArrayList<Movie> movies;
+
+	/**
+	 * The statistics generated from the data stored in the database.
+	 */
 	private Statistics stats;
 
 	// Getters and Setters
@@ -75,11 +124,11 @@ public class DataBase implements DataBaseElement {
 		this.users = users;
 	}
 
-	public ArrayList<RentalOrder> getOrders() {
+	public ArrayList<Invoice> getOrders() {
 		return orders;
 	}
 
-	public void setOrders(ArrayList<RentalOrder> orders) {
+	public void setOrders(ArrayList<Invoice> orders) {
 		this.orders = orders;
 	}
 
@@ -109,13 +158,7 @@ public class DataBase implements DataBaseElement {
 
 	// Constructor
 
-	@Override
-	public String toString() {
-		return "DataBase [name=" + name + ", path=" + path + ", creationDate=" + creationDate + ", lastEditDate="
-				+ lastEditDate + ", managers=" + managers + ", format=" + format + "]";
-	}
-
-	public DataBase(String name, String path, ArrayList<Manager> managers) {
+	public Database(String name, String path, ArrayList<Manager> managers) {
 		super();
 		this.name = name;
 		this.path = path;
@@ -124,7 +167,15 @@ public class DataBase implements DataBaseElement {
 		this.orders = new ArrayList<>();
 		this.categories = new ArrayList<>();
 		this.movies = new ArrayList<>();
-		this.stats = new Statistics("Database created");
+		Statistics tempStats = new Statistics();
+		tempStats.addStringData("Database created");
+		this.stats = tempStats;
+	}
+
+	@Override
+	public String toString() {
+		return "DataBase [name=" + name + ", path=" + path + ", creationDate=" + creationDate + ", lastEditDate="
+				+ lastEditDate + ", managers=" + managers + ", format=" + format + "]";
 	}
 
 	@Override

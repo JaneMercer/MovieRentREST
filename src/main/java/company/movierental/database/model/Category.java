@@ -3,7 +3,6 @@ package company.movierental.database.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import company.movierental.json.gson.DataBaseElement;
 
 public class Category implements DataBaseElement {
 	private String name;

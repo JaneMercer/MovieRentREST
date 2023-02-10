@@ -1,0 +1,224 @@
+{
+  "name": "localDatabaseJSON",
+  "path": "src\\main\\java\\JSON_database\\localDatabaseJSON.json",
+  "creationDate": "2023-02-07T20:07:34.5029148",
+  "lastEditDate": "2023-02-07T20:07:45.148785",
+  "format": "JSON",
+  "managers": [
+    {
+      "login": "admin",
+      "position": "admin",
+      "uniqueKey": {
+        "managerKey": "totallyUniqueKey"
+      }
+    }
+  ],
+  "users": [],
+  "orders": [],
+  "categories": [],
+  "movies": [
+    {
+      "movieID": "49b97119-fd3a-41ff-8a34-69713d86f828",
+      "title": "The Wrath of God",
+      "year": 2022,
+      "rated": "TV-MA",
+      "releaseDate": "2022-06-15",
+      "runtime": "97 min",
+      "genre": "Drama, Thriller",
+      "director": "Sebastián Schindel",
+      "writer": "Pablo Del Teso, Guillermo Martínez, Guillermo Martínez",
+      "actors": "Macarena Achaga, Juan Minujín, Diego Peretti",
+      "plot": "Luciana, a young woman immersed in a circle of mysterious deaths of relatives and the growing suspicion that the person responsible is an enigmatic writer, her former boss.",
+      "language": "Spanish",
+      "country": "Argentina",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMGRmMzMyOTEtMzZlMy00MTRmLTg2ZDMtYTdmNWM2YzIyNGEyXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "5.8/10"
+        },
+        {
+          "source": "Rotten Tomatoes",
+          "value": "38%"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "5.8",
+      "imdbVotes": "3,936",
+      "imdbID": "tt15189534"
+    },
+    {
+      "movieID": "2315f885-1ef2-4bfa-b917-6d6b5bad2cec",
+      "title": "Antaryatri Mahapurush (The Walking God)",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-07-29",
+      "runtime": "150 min",
+      "genre": "Biography",
+      "director": "Anil Kulchainiya",
+      "writer": "Anil Kulchainiya",
+      "actors": "Krishna Bhatt, Gajendra Chauhan, Milind Gunaji",
+      "plot": "The film \"Antaryatri Mahapurush (The Walking God)\" is the life journey of Digambar Sant Acharya Vidya Sagar Ji Maharaj,.The film covers the story of his childhood till attaining the position of Acharya, his education, his sports, ...",
+      "language": "Hindi",
+      "country": "India",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BODg5MWMyZGEtYzY4Mi00NjU1LWEzNDUtNTliNTJmZTQwNDczXkEyXkFqcGdeQXVyMjEzNzg4NjU@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "9.4/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "9.4",
+      "imdbVotes": "350",
+      "imdbID": "tt16226960"
+    },
+    {
+      "movieID": "4aadd6e1-7df4-460c-9d36-39602e170eb4",
+      "title": "Dragon: The Weapon of God",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-01-04",
+      "runtime": "106 min",
+      "genre": "Action, Adventure, Fantasy",
+      "director": "Alexander Bok",
+      "writer": "Alexander Bok",
+      "actors": "Alexander Bok, Alexis Abrams, Sean Ian",
+      "plot": "A teen with superhero powers leads an underground group formed to bring down the establishment after the mayor of New York City intensifies police brutality towards blacks and calls for a citywide purge.",
+      "language": "English",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjAyYWI4M2ItODZiZi00YzdkLThjNzgtYjRkMzVjZTUxNDM0XkEyXkFqcGdeQXVyNzk5ODY5Njk@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "1.5/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "1.5",
+      "imdbVotes": "273",
+      "imdbID": "tt9169280"
+    },
+    {
+      "movieID": "92b6e052-d82a-4c15-9c4e-b6a118c9c91b",
+      "title": "The Man Who Drew God",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-11-21",
+      "runtime": "100 min",
+      "genre": "Drama",
+      "director": "Franco Nero",
+      "writer": "Lorenzo De Luca, Eugenio Masciari",
+      "actors": "Kevin Spacey, Faye Dunaway, Robert Davi",
+      "plot": "The rise and fall of a blind artist who has the extraordinary gift of making true-to-life portraits just by listening to human voices, and of becoming a TV-junk star. A fable on the need to rediscover the miraculous power of digni...",
+      "language": "Italian",
+      "country": "Italy",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjBkNDdkOTctODhlNy00M2QwLTljZTEtZmI4NmY5ZGFmY2EzXkEyXkFqcGdeQXVyMTAxNTQxMDk3._V1_SX300.jpg",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "124",
+      "imdbID": "tt9383986"
+    },
+    {
+      "movieID": "595edd6f-984a-40ba-b906-9f099ffc1efb",
+      "title": "God Save the Queens",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-06-11",
+      "runtime": "87 min",
+      "genre": "Comedy",
+      "director": "Jordan Danger",
+      "writer": "Jordan Danger",
+      "actors": "Joaquim de Almeida, Peter Facinelli, Jordan Danger",
+      "plot": "A dramedy about four Drag Queens who find themselves at the very same therapy retreat. In an effort to overcome issues holding them back, they dissect their problems, told in vignettes of their lives. They discover common ground; ...",
+      "language": "N/A",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZmIwMzk3MzUtMzk0Ni00YjRjLWJkNDUtNTI5YTcwNDc3YzM0XkEyXkFqcGdeQXVyMTIzMzg5NjMx._V1_SX300.jpg",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "19",
+      "imdbID": "tt10880158"
+    },
+    {
+      "movieID": "341ef616-aea0-4076-bad6-adddb962c992",
+      "title": "Marvel \u0026 DC\u0027s War on God: The Antichrist Agenda",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-03-04",
+      "runtime": "150 min",
+      "genre": "Documentary",
+      "director": "Joe Schimmel",
+      "writer": "Joe Schimmel",
+      "actors": "Joe Schimmel, Justin Hand",
+      "plot": "Marvel and DC\u0027s War on God: The Antichrist Agenda is part 1 in a 7-part series exposing how popular comic books, movies, and TV shows are riddled with anti-Christ themes glorifying violence, sexual perversion, blasphemy, and the o...",
+      "language": "English",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjMxZWNiYmUtODlhYy00YTU1LWFiMGItZTIzM2ZjZmNlMTYyXkEyXkFqcGdeQXVyNTQ4NDE3Mjg@._V1_SX300.jpg",
+      "ratings": [
+        {
+          "source": "Internet Movie Database",
+          "value": "7.2/10"
+        }
+      ],
+      "metascore": "N/A",
+      "imdbRating": "7.2",
+      "imdbVotes": "15",
+      "imdbID": "tt18351990"
+    },
+    {
+      "movieID": "4cc1f35b-ad02-4333-98d6-b5ace6989977",
+      "title": "God Has Wronged Me - an Adaptation of the Book of Job",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-03-14",
+      "runtime": "40 min",
+      "genre": "Short, Drama",
+      "director": "Garry Nation",
+      "writer": "Garry Nation",
+      "actors": "Garry Nation, Anna Terry, Theo Bray",
+      "plot": "Job, a righteous man, is suddenly stricken with catastrophic loss and acute and painful disease. His friends are convinced he must have committed some grave sin, but Job insists he is innocent and demands a hearing before God.",
+      "language": "English",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzBjNjljZTMtYTdiMS00ZDZlLWFkZTItNDdhYjI2OGFkNTdlXkEyXkFqcGdeQXVyMzU4ODY5NTE@._V1_SX300.jpg",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "N/A",
+      "imdbID": "tt18951764"
+    },
+    {
+      "movieID": "fcba01b1-2d23-4008-ac19-37d2ac735294",
+      "title": "Marvel \u0026 DC\u0027s War on God: Doctor Strange, Aleister Crowley and the Multiverse of Satanism",
+      "year": 2022,
+      "rated": "N/A",
+      "releaseDate": "2022-09-02",
+      "runtime": "158 min",
+      "genre": "Documentary",
+      "director": "Joe Schimmel",
+      "writer": "Joe Schimmel",
+      "actors": "Joe Schimmel",
+      "plot": "Doctor Strange, Aleister Crowley and the Multiverse of Satanism is part 2 in a 7-part series exposing how the popular Marvel character, Doctor Strange, has its origins based on the most notorious satanist of all time, Aleister Cro...",
+      "language": "English",
+      "country": "United States",
+      "awards": "N/A",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYThhYzVmYmItNDYyOC00NDUyLTk1N2MtNGZjZjQwYjE1ZGM2XkEyXkFqcGdeQXVyNTQ4NDE3Mjg@._V1_SX300.jpg",
+      "ratings": [],
+      "metascore": "N/A",
+      "imdbRating": "N/A",
+      "imdbVotes": "N/A",
+      "imdbID": "tt21880322"
+    }
+  ],
+  "stats": {
+    "someData": ["Database created"]
+  }
+}

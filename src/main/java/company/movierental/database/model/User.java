@@ -2,13 +2,12 @@ package company.movierental.database.model;
 
 import java.util.ArrayList;
 
-import company.movierental.json.gson.DataBaseElement;
 
 public class User implements DataBaseElement {
 	private String name;
 	private String email; // used as a unique key
 	private String password;
-	private ArrayList<RentalOrder> rentalOrders;
+	private ArrayList<Invoice> rentalOrders;
 
 	// Getters and setters
 	public String getName() {
@@ -35,11 +34,11 @@ public class User implements DataBaseElement {
 		this.password = password;
 	}
 
-	public ArrayList<RentalOrder> getRentalOrders() {
+	public ArrayList<Invoice> getRentalOrders() {
 		return rentalOrders;
 	}
 
-	public void setRentalOrders(ArrayList<RentalOrder> rentalOrders) {
+	public void setRentalOrders(ArrayList<Invoice> rentalOrders) {
 		this.rentalOrders = rentalOrders;
 	}
 

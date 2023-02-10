@@ -1,4 +1,4 @@
-package company.movierental.json.gson;
+package company.movierental.utils.gson;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
