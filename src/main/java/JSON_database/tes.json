@@ -219,6 +219,6 @@
     }
   ],
   "stats": {
-    "someData": "Database created"
+    "someData": ["Database created"]
   }
 }

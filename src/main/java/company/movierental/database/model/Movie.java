@@ -6,26 +6,52 @@ import java.util.UUID;
 
 import company.movierental.utils.genkey.UniqueIDGenerator;
 
+/**
+ * The `Movie` class represents a movie object. It stores information about a movie, including its title, release date, etc.
+ * @author Iryna
+ * @version 0.1
+ * @since 10.02.23
+ */
 public class Movie implements DataBaseElement {
+	/** The unique ID of the movie. */
 	private UUID movieID;
+	/** The title of the movie. */
 	private String title;
+	/** The year the movie was released. */
 	private String year;
+	/** The movie's MPAA rating. */
 	private String rated;
+	/** The release date of the movie. */
 	private LocalDate releaseDate;
+	/** The runtime of the movie. */
 	private String runtime;
+	/** The genre of the movie. */
 	private String genre;
+	/** The director of the movie. */
 	private String director;
+	/** The writer of the movie. */
 	private String writer;
+	/** The actors in the movie. */
 	private String actors;
+	/** A brief plot summary of the movie. */
 	private String plot;
+	/** The language of the movie. */
 	private String language;
+	/** The country where the movie was produced. */
 	private String country;
+	/** Awards won by the movie. */
 	private String awards;
+	/** A URL to the poster image for the movie. */
 	private String poster;
+	/** A list of ratings for the movie. */
 	private List<Rating> ratings;
+	/** The movie's Metascore. */
 	private String metascore;
+	/** The movie's IMDb rating. */
 	private String imdbRating;
+	/** The number of IMDb votes for the movie. */
 	private String imdbVotes;
+	/** The IMDb ID for the movie. */
 	private String imdbID;
 
 	// Getters and setters
@@ -190,8 +216,14 @@ public class Movie implements DataBaseElement {
 		this.imdbID = imdbID;
 	}
 
-	// constructor
-
+	/**
+	 * Constructs a new `Movie` object with the given title, release date and imdbID.
+	 * The movie ID is automatically generated using the `UniqueIDGenerator`.
+	 *
+	 * @param title The title of the movie.
+	 * @param releaseDate The release date of the movie.
+	 * @param imdbID The IMDb ID of the movie.
+	 */
 	public Movie(String title, LocalDate releaseDate, String imdbID) {
 		super();
 		this.movieID = UniqueIDGenerator.generateUniqueID();
@@ -200,7 +232,10 @@ public class Movie implements DataBaseElement {
 		this.imdbID = imdbID;
 	}
 
-	// constructor form OMDB
+	/**
+	 * Constructs a new `Movie` object setting all existing variables of the class.
+	 * The movie ID is automatically generated using the `UniqueIDGenerator`.
+	 */
 	public Movie(String title, String year, String rated, LocalDate releaseDate, String runtime, String genre,
 			String director, String writer, String actors, String plot, String language, String country, String awards,
 			String poster, List<Rating> ratings, String metascore, String imdbRating, String imdbVotes, String imdbID) {
