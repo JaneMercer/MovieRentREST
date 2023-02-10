@@ -1,6 +1,5 @@
-package company.movierental.json;
+package company.movierental.database.handlers;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -22,8 +20,6 @@ import company.movierental.database.model.Rating;
  * for adding, updating and removing movies from a local JSON file.
  */
 public class MovieHandler extends JsonHandler {
-
-	private static final boolean False = false;
 
 	/**
 	 * Constructor that sets the file path to the local JSON file.
@@ -144,7 +140,7 @@ public class MovieHandler extends JsonHandler {
 		JsonElement element = json.get(key);
 		return element != null && !element.isJsonNull() ? element.getAsString() : defaultValue;
 	}
-
+	
 	public static Movie createMovieFromJson(JsonObject json) {
 		DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendPattern("yyyy-MM-dd")
 				.toFormatter(Locale.ENGLISH);
@@ -181,12 +177,6 @@ public class MovieHandler extends JsonHandler {
 		String imdbRating = getValueOrDefault(json, "imdbRating", "N/A");
 		String imdbVotes = getValueOrDefault(json, "imdbVotes", "N/A");
 		String imdbID = getValueOrDefault(json, "imdbID", "N/A");
-		
-
-		Movie tempMovie = new Movie(title, year, rated, releaseDate, runtime, genre, director, writer, actors, plot, language,
-				country, awards, poster, movieRatings, metascore, imdbRating, imdbVotes, imdbID);
-				
-		System.out.print(tempMovie.toString());
 
 		if (title.equals("N/A") || imdbID.equals("N/A") || releaseDate == null) {
 			throw new IllegalArgumentException(

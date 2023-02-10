@@ -19,15 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
+import company.movierental.database.handlers.MovieHandler;
 import company.movierental.database.model.Movie;
-import company.movierental.json.MovieHandler;
-import company.movierental.json.gson.LocalDateTimeTypeAdapter;
-import company.movierental.json.gson.LocalDateTypeAdapter;
-import company.movierental.json.gson.ManagerSecurityKeyTypeAdapter;
-import company.movierental.service.MoviePrice;
-import company.movierental.utils.ManagerSecurityKey;
+import company.movierental.database.model.MoviePrice;
+import company.movierental.utils.genkey.ManagerSecurityKey;
+import company.movierental.utils.gson.LocalDateTimeTypeAdapter;
+import company.movierental.utils.gson.LocalDateTypeAdapter;
+import company.movierental.utils.gson.ManagerSecurityKeyTypeAdapter;
 
 @RestController
 @RequestMapping("/api/movies")
@@ -46,7 +45,7 @@ public class MovieController {
 	}
 
 	@GetMapping("/price/{imdbID}")
-	public ResponseEntity<Double> getPricePerWeek(@PathVariable String imdbID) {
+	public ResponseEntity<Double> getCurrentMoviePrice(@PathVariable String imdbID) {
 		Movie movie = movieHandler.getMovieByImdbID(imdbID);
 		if (movie == null) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

@@ -1,6 +1,5 @@
 package company.movierental.database.model;
 
-import company.movierental.json.gson.DataBaseElement;
 
 public class Rating implements DataBaseElement {
 	private String source;

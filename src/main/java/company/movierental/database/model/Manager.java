@@ -2,8 +2,7 @@ package company.movierental.database.model;
 
 import java.time.LocalDate;
 
-import company.movierental.json.gson.DataBaseElement;
-import company.movierental.utils.ManagerSecurityKey;
+import company.movierental.utils.genkey.ManagerSecurityKey;
 
 public class Manager implements DataBaseElement {
 	private String fullName;

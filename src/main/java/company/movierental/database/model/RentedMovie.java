@@ -2,16 +2,26 @@ package company.movierental.database.model;
 
 import java.time.LocalDate;
 
-import company.movierental.json.gson.DataBaseElement;
-import company.movierental.service.InvoiceService;
+import company.movierental.database.handlers.InvoiceHandler;
 
 public class RentedMovie implements DataBaseElement {
-
 	private Movie movie;
 	private LocalDate startDate;
 	private LocalDate endDate;
-	private User user;
 	private double rentalPrice;
+
+	public double getRentalPrice() {
+		return InvoiceHandler.countRentedMoviePrice(movie, startDate, endDate);
+	}
+
+	public void setRentalPrice(LocalDate startDate, LocalDate endDate) {
+		this.rentalPrice = InvoiceHandler.countRentedMoviePrice(movie, startDate, endDate);
+	}
+
+	// may be useful in some cases
+	public void setRentalPrice(double rentalPrice) {
+		this.rentalPrice = rentalPrice;
+	}
 
 	// Getters and setters
 	public Movie getMovie() {
@@ -26,28 +36,18 @@ public class RentedMovie implements DataBaseElement {
 		return endDate;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public double getRentalPrice() {
-		return rentalPrice;
-	}
-
 	// constructor
-	public RentedMovie(Movie movie, LocalDate startDate, LocalDate endDate, User user) {
+	public RentedMovie(Movie movie, LocalDate startDate, LocalDate endDate) {
 		this.movie = movie;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.user = user;
-		this.rentalPrice = InvoiceService.calculateRentalPrice(movie, startDate, endDate);
 	}
 	// toString()
 
 	@Override
 	public String toString() {
-		return "RentedMovie [movie=" + movie + ", startDate=" + startDate + ", endDate=" + endDate + ", user=" + user
-				+ ", rentalPrice=" + rentalPrice + "]";
+		return "RentedMovie [movie=" + movie + ", startDate=" + startDate + ", endDate=" + endDate + ", rentalPrice="
+				+ rentalPrice + "]";
 	}
 
 	@Override

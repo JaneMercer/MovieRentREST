@@ -2,7 +2,6 @@ package company.movierental.database.model;
 
 import java.util.ArrayList;
 
-import company.movierental.json.gson.DataBaseElement;
 
 public class User implements DataBaseElement {
 	private String name;

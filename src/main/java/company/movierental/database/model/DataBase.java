@@ -3,7 +3,6 @@ package company.movierental.database.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import company.movierental.json.gson.DataBaseElement;
 
 public class Database implements DataBaseElement {
 	private String name;

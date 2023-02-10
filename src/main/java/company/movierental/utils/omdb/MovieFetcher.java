@@ -1,14 +1,19 @@
-package company.movierental.omdb;
+package company.movierental.utils.omdb;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import company.movierental.database.handlers.JsonHandler;
 import company.movierental.database.model.Movie;
-import company.movierental.json.JsonHandler;
-import company.movierental.json.MovieHandler;
+import company.movierental.database.model.Rating;
 
 public class MovieFetcher {
 
@@ -23,7 +28,7 @@ public class MovieFetcher {
 		try {
 			JsonObject jsonObject = JsonHandler
 					.fetchJsonObject("http://www.omdbapi.com/?i=" + imdbID + "&apikey=" + apikey);
-			return MovieHandler.createMovieFromJson(jsonObject);
+			return createMovieFromOMDB(jsonObject);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error caught while fetching movie information for imdbID: " + imdbID);
@@ -86,4 +91,58 @@ public class MovieFetcher {
 		return movieList;
 	}
 
+	public static Movie createMovieFromOMDB(JsonObject jsonObject) {
+
+		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+				// case insensitive to parse JAN and FEB
+				.parseCaseInsensitive()
+				// add pattern
+				.appendPattern("dd MMM yyyy")
+				// create formatter (use English Locale to parse month names)
+				.toFormatter(Locale.ENGLISH);
+
+		// create list of Ratings
+		JsonArray ratings = jsonObject.getAsJsonArray("Ratings");
+		List<Rating> movieRatings = new ArrayList<>();
+		for (int i = 0; i < ratings.size(); i++) {
+			JsonObject rating = ratings.get(i).getAsJsonObject();
+			movieRatings.add(new Rating(rating.get("Source").getAsString(), rating.get("Value").getAsString()));
+		}
+
+		try {
+			String title = jsonObject.get("Title").getAsString();
+			String year = jsonObject.get("Year").getAsString();
+			String rated = jsonObject.get("Rated").getAsString();
+			String releaseDateJson = jsonObject.get("Released").getAsString();
+			LocalDate releaseDate = null;
+			if (!releaseDateJson.equals("N/A")) {
+				releaseDate = LocalDate.parse(releaseDateJson, formatter);
+			}
+			String runtime = jsonObject.get("Runtime").getAsString();
+			String genre = jsonObject.get("Genre").getAsString();
+			String director = jsonObject.get("Director").getAsString();
+			String writer = jsonObject.get("Writer").getAsString();
+			String actors = jsonObject.get("Actors").getAsString();
+			String plot = jsonObject.get("Plot").getAsString();
+			String language = jsonObject.get("Language").getAsString();
+			String country = jsonObject.get("Country").getAsString();
+			String awards = jsonObject.get("Awards").getAsString();
+			String poster = jsonObject.get("Poster").getAsString();
+			String metascore = jsonObject.get("Metascore").getAsString();
+			String imdbRating = jsonObject.get("imdbRating").getAsString();
+			String imdbVotes = jsonObject.get("imdbVotes").getAsString();
+			String imdbID = jsonObject.get("imdbID").getAsString();
+
+			if (title == null || imdbRating == null || releaseDate == null) {
+				throw new IllegalArgumentException(
+						"Title, ImdbRating, and Released are required fields, cannot be null. Movie won't be created.");
+			}
+
+			return new Movie(title, year, rated, releaseDate, runtime, genre, director, writer, actors, plot, language,
+					country, awards, poster, movieRatings, metascore, imdbRating, imdbVotes, imdbID);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new IllegalArgumentException("Error parsing movie information from JsonObject", e);
+		}
+	}
 }

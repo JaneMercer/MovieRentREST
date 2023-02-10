@@ -1,4 +1,4 @@
-package company.movierental.json;
+package company.movierental.database.handlers;
 
 import java.time.LocalDateTime;
 import java.util.List;

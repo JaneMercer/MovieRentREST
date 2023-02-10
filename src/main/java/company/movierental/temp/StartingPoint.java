@@ -1,24 +1,20 @@
-package company.movierental.test;
+package company.movierental.temp;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import company.movierental.database.handlers.JsonHandler;
+import company.movierental.database.handlers.MovieHandler;
 import company.movierental.database.model.Manager;
 import company.movierental.database.model.Movie;
-import company.movierental.json.JsonHandler;
-import company.movierental.json.MovieHandler;
-import company.movierental.omdb.MovieFetcher;
-import company.movierental.service.MoviePrice;
-import company.movierental.service.InvoiceService;
-import company.movierental.utils.ManagerSecurityKey;
+import company.movierental.utils.genkey.ManagerSecurityKey;
+import company.movierental.utils.omdb.MovieFetcher;
 
-@SuppressWarnings("unused")
-public class Testing {
+public class StartingPoint {
 
-	public static List<Movie> testFetch() {
-		List<Movie> movieList = MovieFetcher.getMoviesBySearch("A cat", 1, 2022, "794669bb");
+	public static List<Movie> fetchToDatabaseFromOMDB() {
+		List<Movie> movieList = MovieFetcher.getMoviesBySearch("best", 1, 2020, "794669bb");
 		if (movieList != null) {
 			for (Movie movie : movieList) {
 				System.out.print(movie.toString());
@@ -26,8 +22,9 @@ public class Testing {
 
 			}
 			MovieHandler dataFile = new MovieHandler("src\\main\\java\\JSON_database\\2.json");
-			for (Movie movie: movieList) {
-				dataFile.addMovie(movie);}
+			for (Movie movie : movieList) {
+				dataFile.addMovie(movie);
+			}
 		}
 
 		return movieList;
@@ -43,7 +40,7 @@ public class Testing {
 			uniqueKey.setManagerKey("totallyUniqueKey");
 
 			databaseManagers.add(new Manager("admin", "admin", uniqueKey));
-			JsonHandler.createJsonFile("localDatabaseJSON", "src\\main\\java\\JSON_database\\", databaseManagers);
+			JsonHandler.createJsonFile("2", "src\\main\\java\\JSON_database\\", databaseManagers);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,8 +48,8 @@ public class Testing {
 	}
 
 	public static void main(String[] args) {
-		testFetch();
-		// createDataBaseJSON();
+		createDataBaseJSON();
+		fetchToDatabaseFromOMDB();
 
 	}
 }

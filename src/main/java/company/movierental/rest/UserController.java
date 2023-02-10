@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import company.movierental.database.handlers.UserHandler;
 import company.movierental.database.model.User;
-import company.movierental.json.UserHandler;
 
 @RestController
 @RequestMapping("/api/users")

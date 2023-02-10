@@ -3,8 +3,10 @@ package company.movierental;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import company.movierental.json.MovieHandler;
-import company.movierental.json.UserHandler;
+import company.movierental.database.handlers.CategoryHandler;
+import company.movierental.database.handlers.InvoiceHandler;
+import company.movierental.database.handlers.MovieHandler;
+import company.movierental.database.handlers.UserHandler;
 
 @Configuration
 public class Config {
@@ -17,5 +19,13 @@ public class Config {
 	@Bean
 	public UserHandler userHandler() {
 		return new UserHandler(FILE_PATH);
+	}
+	@Bean
+	public InvoiceHandler invoiceHandler() {
+		return new InvoiceHandler(FILE_PATH);
+	}
+	@Bean
+	public CategoryHandler categoryHandler() {
+		return new CategoryHandler(FILE_PATH);
 	}
 }

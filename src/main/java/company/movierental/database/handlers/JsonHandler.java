@@ -1,4 +1,4 @@
-package company.movierental.json;
+package company.movierental.database.handlers;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,10 +19,10 @@ import com.google.gson.JsonObject;
 
 import company.movierental.database.model.Database;
 import company.movierental.database.model.Manager;
-import company.movierental.json.gson.LocalDateTimeTypeAdapter;
-import company.movierental.json.gson.LocalDateTypeAdapter;
-import company.movierental.json.gson.ManagerSecurityKeyTypeAdapter;
-import company.movierental.utils.ManagerSecurityKey;
+import company.movierental.utils.genkey.ManagerSecurityKey;
+import company.movierental.utils.gson.LocalDateTimeTypeAdapter;
+import company.movierental.utils.gson.LocalDateTypeAdapter;
+import company.movierental.utils.gson.ManagerSecurityKeyTypeAdapter;
 
 public class JsonHandler {
 	protected String filePath;

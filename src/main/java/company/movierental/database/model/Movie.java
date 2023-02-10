@@ -1,20 +1,10 @@
 package company.movierental.database.model;
 
-import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.UUID;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
-import company.movierental.json.gson.DataBaseElement;
-import company.movierental.utils.UniqueIDGenerator;
+import company.movierental.utils.genkey.UniqueIDGenerator;
 
 public class Movie implements DataBaseElement {
 	private UUID movieID;

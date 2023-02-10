@@ -1,17 +1,17 @@
 package company.movierental.database.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import company.movierental.json.gson.DataBaseElement;
-import company.movierental.utils.UniqueIDGenerator;
-
-public class Invoice implements DataBaseElement  {
-	private static final Boolean False = null;
+public class Invoice implements DataBaseElement {
 	private UUID orderID;
 	private User client;
-	private ArrayList<RentedMovie> movies;
+	private ArrayList<RentedMovie> moviesForRent;
 	private Boolean isPaid;
+	private LocalDateTime creationDateTime;
+	private LocalDateTime paidDateTime;
+	private String paymentInfo;
 	private Double totalPrice;
 
 	public UUID getOrderID() {
@@ -30,12 +30,20 @@ public class Invoice implements DataBaseElement  {
 		this.client = client;
 	}
 
-	public ArrayList<RentedMovie> getMovies() {
-		return movies;
+	public ArrayList<RentedMovie> getMoviesForRent() {
+		return moviesForRent;
 	}
 
-	public void setMovies(ArrayList<RentedMovie> movies) {
-		this.movies = movies;
+	public void setMoviesForRent(ArrayList<RentedMovie> movies) {
+		this.moviesForRent = movies;
+	}
+
+	public LocalDateTime getCreationDateTime() {
+		return creationDateTime;
+	}
+
+	public void setCreationDateTime(LocalDateTime creationDateTime) {
+		this.creationDateTime = creationDateTime;
 	}
 
 	public Boolean getIsPaid() {
@@ -54,23 +62,38 @@ public class Invoice implements DataBaseElement  {
 		this.totalPrice = totalPrice;
 	}
 
-	
-	public Invoice(String orderID, User client, Boolean isPaid) {
-		super();
-		this.orderID = UniqueIDGenerator.generateUniqueID();
-		this.client = client;
-		this.isPaid = False;
+	public Invoice() {
 	}
 
 	@Override
 	public String toString() {
-		return "RentalOrder [client=" + client + ", movies=" + movies + ", isPaid=" + isPaid + ", totalPrice="
+		return "RentalOrder [client=" + client + ", movies=" + moviesForRent + ", isPaid=" + isPaid + ", totalPrice="
 				+ totalPrice + "]";
 	}
-	
+
+	public LocalDateTime getInvoiceDate() {
+		return creationDateTime;
+	}
+
+	public LocalDateTime getPaidDateTime() {
+		return paidDateTime;
+	}
+
+	public void setPaidDateTime(LocalDateTime paidDateTime) {
+		this.paidDateTime = paidDateTime;
+	}
+
+	public String getPaymentInfo() {
+		return paymentInfo;
+	}
+
+	public void setPaymentInfo(String paymentInfo) {
+		this.paymentInfo = paymentInfo;
+	}
+
 	@Override
 	public String getType() {
-		return "order";
+		return "invoice";
 	}
 
 }

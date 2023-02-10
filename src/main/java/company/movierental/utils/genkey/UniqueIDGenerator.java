@@ -1,4 +1,4 @@
-package company.movierental.utils;
+package company.movierental.utils.genkey;
 
 import java.util.UUID;
 
